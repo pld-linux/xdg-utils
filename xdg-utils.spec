@@ -2,7 +2,7 @@ Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw barzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
 Version:	1.0.2
-Release:	2
+Release:	3
 License:	MIT
 Group:		X11/Applications
 Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
@@ -13,7 +13,7 @@ BuildRequires:	automake
 BuildRequires:	xmlto
 Requires:	coreutils
 Requires:	which
-Requires:	xprop
+Requires:	xorg-app-xprop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
