@@ -15,8 +15,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	xmlto
 Requires:	coreutils
+Requires:	desktop-file-utils
 Requires:	which
 Requires:	xorg-app-xprop
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
