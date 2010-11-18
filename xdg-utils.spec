@@ -1,12 +1,15 @@
+%define		subver	20101028
+%define		rel		4
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw barzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
 Version:	1.0.2
-Release:	3
+Release:	%{rel}.%{subver}
 License:	MIT
 Group:		X11/Applications
-Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
-# Source0-md5:	348a5b91dc66426505022c74a64b2940
+#Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
+Source0:	%{name}-%{subver}.tgz
+# Source0-md5:	8c7b2581c420b534a1d6692ef49ca1aa
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,22 +28,20 @@ environment while the application is running.
 
 %description -l pl.UTF-8
 Xdg-utils to zastaw konsolowych narzędzi ułatwiających integrację
-aplikacji z różnymi środowiskami graficznymi. Mniej więcej połowa
-z tych narzędzi przydatna jest w czasie instalacji danej
-aplikacji, a druga polowa przydaje się już w czasie działania
-aplikacji w danym środowisku graficznym.
+aplikacji z różnymi środowiskami graficznymi. Mniej więcej połowa z
+tych narzędzi przydatna jest w czasie instalacji danej aplikacji, a
+druga polowa przydaje się już w czasie działania aplikacji w danym
+środowisku graficznym.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
