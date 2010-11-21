@@ -11,8 +11,6 @@ Group:		X11/Applications
 Source0:	%{name}-%{subver}.tgz
 # Source0-md5:	8c7b2581c420b534a1d6692ef49ca1aa
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	xmlto
 Requires:	coreutils
 Requires:	desktop-file-utils
@@ -53,5 +51,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/xdg-*
+%{_mandir}/man1/xdg-*.1*
