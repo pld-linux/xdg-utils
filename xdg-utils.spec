@@ -1,7 +1,7 @@
 %define		subver	20101028
 %define		rel		4
 Summary:	Set of tools that assist applications with desktop integration
-Summary(pl.UTF-8):	Zestaw barzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
+Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
 Version:	1.0.2
 Release:	%{rel}.%{subver}
@@ -29,11 +29,11 @@ application and the other half focuses on integration with the desktop
 environment while the application is running.
 
 %description -l pl.UTF-8
-Xdg-utils to zastaw konsolowych narzędzi ułatwiających integrację
-aplikacji z różnymi środowiskami graficznymi. Mniej więcej połowa z
-tych narzędzi przydatna jest w czasie instalacji danej aplikacji, a
-druga polowa przydaje się już w czasie działania aplikacji w danym
-środowisku graficznym.
+Xdg-utils to zestaw obsługiwanych z linii poleceń narzędzi
+ułatwiających integrację aplikacji z różnymi środowiskami graficznymi.
+Mniej więcej połowa z tych narzędzi przydatna jest w czasie instalacji
+danej aplikacji, a druga połowa przydaje się już w czasie działania
+aplikacji w danym środowisku graficznym.
 
 %prep
 %setup -q -n %{name}
