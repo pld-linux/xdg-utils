@@ -1,5 +1,5 @@
 %define		subver	20101028
-%define		rel		4
+%define		rel		5
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
@@ -16,6 +16,7 @@ Requires:	coreutils
 Requires:	desktop-file-utils
 Requires:	which
 Requires:	xorg-app-xprop
+Requires:	xorg-app-xset
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
