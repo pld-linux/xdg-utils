@@ -1,5 +1,5 @@
 %define		subver	20101028
-%define		rel		5
+%define		rel		6
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
