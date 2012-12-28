@@ -1,5 +1,5 @@
 %define		subver	rc1
-%define		rel		1
+%define		rel		2
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
@@ -41,6 +41,13 @@ mv xdg-utils-v%{version}-*/* .
 
 %build
 %configure
+
+# for snapshot. need to regenerate scripts
+%if 0%{?subver:1}
+%{__make} scripts-clean -C scripts
+%{__make} man scripts -C scripts
+%endif
+
 %{__make}
 
 %install
