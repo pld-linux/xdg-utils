@@ -8,7 +8,7 @@ Release:	%{rel}.%{subver}
 License:	MIT
 Group:		X11/Applications
 #Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
-Source0:	xdg-utils-v1.1.0-rc1-71-g050333e.tar.gz
+Source0:	%{name}-v%{version}-%{subver}-71-g050333e.tar.gz
 # Source0-md5:	7a83a4867afc6f5df896f0be0bace74a
 Source1:	get-source.sh
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
