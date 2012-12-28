@@ -1,15 +1,16 @@
-%define		subver	20101028
-%define		rel		6
+%define		subver	rc1
+%define		rel		1
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
-Version:	1.0.2
+Version:	1.1.0
 Release:	%{rel}.%{subver}
 License:	MIT
 Group:		X11/Applications
 #Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
-Source0:	%{name}-%{subver}.tgz
-# Source0-md5:	8c7b2581c420b534a1d6692ef49ca1aa
+Source0:	xdg-utils-v1.1.0-rc1-71-g050333e.tar.gz
+# Source0-md5:	7a83a4867afc6f5df896f0be0bace74a
+Source1:	get-source.sh
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
 BuildRequires:	xmlto
 Requires:	coreutils
@@ -35,7 +36,8 @@ danej aplikacji, a druga połowa przydaje się już w czasie działania
 aplikacji w danym środowisku graficznym.
 
 %prep
-%setup -q -n %{name}
+%setup -qc
+mv xdg-utils-v%{version}-*/* .
 
 %build
 %configure
