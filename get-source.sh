@@ -20,4 +20,4 @@ if [ -e $ARCHIVE ]; then
 	echo >&2 "$ARCHIVE already exists"
 	exit 0
 fi
-git archive master --format tar --prefix=$PACKAGE-$VERSION/ | gzip -9 > $ARCHIVE
+git archive master --prefix=$PACKAGE-$VERSION/ -o $ARCHIVE
