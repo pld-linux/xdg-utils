@@ -1,17 +1,13 @@
-%define		subver	rc1
-%define		rel		3
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
-Version:	1.1.0
-Release:	%{rel}.%{subver}
+Version:	1.1.1
+Release:	1
 License:	MIT
 Group:		X11/Applications
-#Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tgz
-Source0:	%{name}-v%{version}-%{subver}-71-g050333e.tar.gz
-# Source0-md5:	7a83a4867afc6f5df896f0be0bace74a
+Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tar.gz
+# Source0-md5:	2d0aec6037769a5f138ff404b1bb4b15
 Source1:	get-source.sh
-Patch0:		0001-xdg-settings-add-MATE-support.patch
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
 BuildRequires:	xmlto
 Requires:	coreutils
@@ -37,18 +33,10 @@ danej aplikacji, a druga połowa przydaje się już w czasie działania
 aplikacji w danym środowisku graficznym.
 
 %prep
-%setup -qc
-mv xdg-utils-v%{version}-*/* .
-%patch0 -p1
+%setup -q
 
 %build
 %configure
-
-# for snapshot. need to regenerate scripts
-%if 0%{?subver:1}
-%{__make} scripts-clean -C scripts
-%{__make} man scripts -C scripts
-%endif
 
 %{__make}
 
@@ -62,6 +50,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README TODO
-%attr(755,root,root) %{_bindir}/xdg-*
-%{_mandir}/man1/xdg-*.1*
+%doc ChangeLog LICENSE README RELEASE_NOTES TODO
+%attr(755,root,root) %{_bindir}/xdg-desktop-icon
+%attr(755,root,root) %{_bindir}/xdg-desktop-menu
+%attr(755,root,root) %{_bindir}/xdg-email
+%attr(755,root,root) %{_bindir}/xdg-icon-resource
+%attr(755,root,root) %{_bindir}/xdg-mime
+%attr(755,root,root) %{_bindir}/xdg-open
+%attr(755,root,root) %{_bindir}/xdg-screensaver
+%attr(755,root,root) %{_bindir}/xdg-settings
+%{_mandir}/man1/xdg-desktop-icon.1*
+%{_mandir}/man1/xdg-desktop-menu.1*
+%{_mandir}/man1/xdg-email.1*
+%{_mandir}/man1/xdg-icon-resource.1*
+%{_mandir}/man1/xdg-mime.1*
+%{_mandir}/man1/xdg-open.1*
+%{_mandir}/man1/xdg-screensaver.1*
+%{_mandir}/man1/xdg-settings.1*
