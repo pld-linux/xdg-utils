@@ -1,12 +1,12 @@
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
-Version:	1.1.2
+Version:	1.1.3
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tar.gz
-# Source0-md5:	361e75eb76c94d19f6f4f330d8ee626b
+# Source0-md5:	902042508b626027a3709d105f0b63ff
 Source1:	get-source.sh
 URL:		http://portland.freedesktop.org/wiki/XdgUtils
 BuildRequires:	xmlto
