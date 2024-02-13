@@ -1,14 +1,14 @@
 Summary:	Set of tools that assist applications with desktop integration
 Summary(pl.UTF-8):	Zestaw narzędzi ułatwiających integrację aplikacji ze środowiskami graficznymi
 Name:		xdg-utils
-Version:	1.1.3
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://portland.freedesktop.org/download/%{name}-%{version}.tar.gz
-# Source0-md5:	902042508b626027a3709d105f0b63ff
+Source0:	https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v%{version}/%{name}-v%{version}.tar.bz2
+# Source0-md5:	6c198bfdcbba13652276bb2bd5ffa80c
 Source1:	get-source.sh
-URL:		http://portland.freedesktop.org/wiki/XdgUtils
+URL:		https://www.freedesktop.org/wiki/Software/xdg-utils/
 BuildRequires:	xmlto
 Requires:	coreutils
 Requires:	desktop-file-utils
@@ -33,7 +33,7 @@ danej aplikacji, a druga połowa przydaje się już w czasie działania
 aplikacji w danym środowisku graficznym.
 
 %prep
-%setup -q
+%setup -q -n %{name}-v%{version}
 
 %build
 %configure
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog LICENSE README RELEASE_NOTES TODO
+%doc ChangeLog LICENSE README.md RELEASE_NOTES TODO
 %attr(755,root,root) %{_bindir}/xdg-desktop-icon
 %attr(755,root,root) %{_bindir}/xdg-desktop-menu
 %attr(755,root,root) %{_bindir}/xdg-email
